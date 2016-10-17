@@ -24,5 +24,12 @@ angular.module('app')
             return lists;
         }
 
+        services.addList = function (listName) {
+            lists.push({
+                id: lists.length + 1,
+                listName: listName,
+            });
+        }
+
         return services;
     });
