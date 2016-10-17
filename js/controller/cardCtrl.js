@@ -4,13 +4,19 @@
 
 angular.module('app')
     .controller('cardCtrl', ['cardsFactory', function (cardsFactory) {
+        this.isEditing = false;
+        this.editingCard = null;
+
         this.removeCard = function (cardId) {
             cardsFactory.removeCard(cardId);
         }
-        this.changeMoveCard = function (cardId, listId) {
-            console.log(cardId + ' ' + listId);
+        this.editCard = function (card) {
+            this.isEditing = true;
+            this.editingCard = angular.copy(card);
         }
-        /*this.moveCard = function (cardId, listId) {
-         cardsFactory.moveCard(cardId, listId);
-         }*/
+        this.updateCard = function (card) {
+            cardsFactory.updateCard(this.editingCard);
+            this.isEditing = false;
+            this.editingCard = null;
+        }
     }]);

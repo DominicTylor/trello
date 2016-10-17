@@ -53,5 +53,14 @@ angular.module('app')
             }
         };
 
+        services.updateCard = function (updatingCard) {
+            for (var i = 0; i < cards.length; i++) {
+                if (cards[i].id === updatingCard.id) {
+                    cards[i].description = updatingCard.description;
+                    break;
+                }
+            }
+        }
+
         return services;
     });

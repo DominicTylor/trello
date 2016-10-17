@@ -24,9 +24,22 @@
                 <h2 class="list__heading">{{ list.listName }}</h2>
                 <div class="list__card" ng-repeat="card in listCtrl.getCards(list.id)"
                      ng-controller="cardCtrl as cardCtrl">
-                    <a class="list__card-remove" ng-click="cardCtrl.removeCard(card.id)">&#x2718;</a>
-                    <a class="list__card-move" ng-click="cardCtrl.changeMoveCard(card.id, list.id)">&#x270E;</a>
-                    {{ card.description }}
+                    <div ng-if="!cardCtrl.isEditing">
+                        <a class="list__card-remove" ng-click="cardCtrl.removeCard(card.id)">&#x2718;</a>
+                        <a class="list__card-move" ng-click="cardCtrl.editCard(card)">&#x270E;</a>
+                        {{ card.description }}
+                    </div>
+                    <div ng-if="cardCtrl.isEditing">
+                        <form ng-submit="cardCtrl.updateCard(card)">
+                            <div class="input-group">
+                                <input class="form-control"
+                                       type="text" ng-model="cardCtrl.editingCard.description" placeholder="Введите текст">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default">&#x2714;</button>
+                            </span>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="list__add-new-card">
                     <form ng-submit="listCtrl.addCard(list.id)">
