@@ -22,14 +22,23 @@ angular.module('app')
 
         services.getLists = function () {
             return lists;
-        }
+        };
 
         services.addList = function (listName) {
             lists.push({
-                id: lists.length + 1,
+                id: lists[lists.length-1].id + 1,
                 listName: listName,
             });
-        }
+        };
+
+        services.removeList = function (listId) {
+            for (var i = 0; i < lists.length; i++) {
+                if (lists[i].id === listId) {
+                    lists.splice(i,1);
+                    break;
+                }
+            }
+        };
 
         return services;
     });

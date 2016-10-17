@@ -7,8 +7,18 @@
         border: 1px solid @listItemBorder;
         border-radius: 5px;
     }
-    &__add-new-list {
-        padding-bottom: 14px;
+    &__remove {
+        float: right;
+        cursor: pointer;
+        color: @black;
+        transition: color .3s linear;
+        &:link, &:visited, &:focus {
+            color: @black;
+        }
+        &:hover, &:active {
+            color: @red;
+            text-decoration: none;
+        }
     }
     &__heading {
         text-align: center;

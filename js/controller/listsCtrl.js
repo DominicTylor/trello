@@ -3,10 +3,10 @@
  */
 
 angular.module('app')
-    .controller('listsCtrl', function (listsFactory) {
+    .controller('listsCtrl', ['listsFactory', function (listsFactory) {
         this.lists = listsFactory.getLists();
         this.addList = function () {
             listsFactory.addList(this.listName);
             this.listName = '';
         }
-    });
+    }]);
