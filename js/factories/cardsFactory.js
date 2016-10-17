@@ -44,5 +44,14 @@ angular.module('app')
             });
         };
 
+        services.removeCard = function (cardId) {
+            for (var i = 0; i < cards.length; i++) {
+                if (cards[i].id === cardId) {
+                    cards.splice(i,1);
+                    break;
+                }
+            }
+        };
+
         return services;
     });

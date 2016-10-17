@@ -7,7 +7,7 @@
         border: 1px solid @listItemBorder;
         border-radius: 5px;
     }
-    &__remove {
+    &__remove, &__card-remove, &__card-move {
         float: right;
         cursor: pointer;
         color: @black;
@@ -19,6 +19,12 @@
             color: @red;
             text-decoration: none;
         }
+    }
+    &__card-move {
+        margin: 0 4px 5px 5px;
+    }
+    &__card-remove {
+        margin: 0 2px 5px 0;
     }
     &__heading {
         text-align: center;

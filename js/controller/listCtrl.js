@@ -12,5 +12,6 @@ angular.module('app')
         }
         this.addCard = function (listId) {
             cardsFactory.addCard(listId, this.description);
+            this.description = '';
         }
     }]);
