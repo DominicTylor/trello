@@ -25,6 +25,18 @@
                 <div class="list__card" ng-repeat="card in listCtrl.getCards(list.id)">
                     {{ card.description }}
                 </div>
+                <div class="list__add-new-card">
+                    <form ng-submit="listCtrl.addCard(list.id)">
+                        <label class="text-center" for="add-new-cards">Добавить карточку</label>
+                        <div class="input-group">
+                            <input id="add-new-cards" class="form-control"
+                                   type="text" ng-model="listCtrl.description" placeholder="Введите текст">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default">Добавить</button>
+                        </span>
+                        </div>
+                    </form>
+                </div>
             </section>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -35,7 +47,7 @@
                         <input id="add-new-lists" class="form-control"
                                type="text" ng-model="listsCtrl.listName" placeholder="Введите название">
                         <span class="input-group-btn">
-                            <button class="btn btn-default">Добавить!</button>
+                            <button class="btn btn-default">Добавить</button>
                         </span>
                     </div>
                 </form>

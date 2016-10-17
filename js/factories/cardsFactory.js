@@ -36,5 +36,13 @@ angular.module('app')
             });
         };
 
+        services.addCard = function (listId, description) {
+            cards.push({
+                id: cards[cards.length-1].id + 1,
+                description: description,
+                listId: listId,
+            });
+        };
+
         return services;
     });

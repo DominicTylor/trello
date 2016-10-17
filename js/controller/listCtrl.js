@@ -10,4 +10,7 @@ angular.module('app')
         this.getCards = function (listId) {
             return cardsFactory.getCards(listId);
         }
+        this.addCard = function (listId) {
+            cardsFactory.addCard(listId, this.description);
+        }
     }]);
