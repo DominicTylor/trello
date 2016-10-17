@@ -3,8 +3,11 @@
  */
 
 angular.module('app')
-    .controller('listCtrl', ['listsFactory', function (listsFactory) {
+    .controller('listCtrl', ['listsFactory', 'cardsFactory', function (listsFactory, cardsFactory) {
         this.removeList = function (listId) {
             listsFactory.removeList(listId);
+        }
+        this.getCards = function (listId) {
+            return cardsFactory.getCards(listId);
         }
     }]);

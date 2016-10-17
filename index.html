@@ -22,6 +22,9 @@
             <section class="list__item ">
                 <a class="list__remove" ng-click="listCtrl.removeList(list.id)">&#x2716;</a>
                 <h2 class="list__heading">{{ list.listName }}</h2>
+                <div class="list__card" ng-repeat="card in listCtrl.getCards(list.id)">
+                    {{ card.description }}
+                </div>
             </section>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
