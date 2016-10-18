@@ -13,7 +13,7 @@ angular.module('app')
                 },
                 {
                     id: 2,
-                    description: 'Добавить поункты в меню',
+                    description: 'Добавить пункты в меню',
                     listId: 2,
                 },
                 {

@@ -38,9 +38,10 @@
                                     <button class="btn btn-default">&#x2714;</button>
                                 </span>
                             </div>
-                            <select class="form-control" ng-model="listCtrl.editingCard.listId"
+                            <select class="form-control" ng-model="cardCtrl.editingCard.listId"
                                     ng-options="list.id as list.listName for list in listsCtrl.lists">
                             </select>
+                            {{cardCtrl.editingCard.listId}}
                         </form>
                     </div>
                 </div>
