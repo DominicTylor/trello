@@ -57,6 +57,7 @@ angular.module('app')
             for (var i = 0; i < cards.length; i++) {
                 if (cards[i].id === updatingCard.id) {
                     cards[i].description = updatingCard.description;
+                    cards[i].listId = updatingCard.listId;
                     break;
                 }
             }

@@ -35,9 +35,12 @@
                                 <input class="form-control"
                                        type="text" ng-model="cardCtrl.editingCard.description" placeholder="Введите текст">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default">&#x2714;</button>
-                            </span>
+                                    <button class="btn btn-default">&#x2714;</button>
+                                </span>
                             </div>
+                            <select class="form-control" ng-model="listCtrl.editingCard.listId"
+                                    ng-options="list.id as list.listName for list in listsCtrl.lists">
+                            </select>
                         </form>
                     </div>
                 </div>
