@@ -18,7 +18,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src(['./js/app.js', './js/factories/*.js', './js/controller/*.js'])
+    return gulp.src(['./js/app.js', './js/factories/*.js', './js/directives/*.js', './js/controller/*.js'])
         .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./js'));

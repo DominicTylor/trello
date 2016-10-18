@@ -30,7 +30,7 @@
                         {{ card.description }}
                     </div>
                     <div ng-if="cardCtrl.isEditing">
-                        <form ng-submit="cardCtrl.updateCard(card)">
+                        <form ng-submit="cardCtrl.updateCard(card)" close-editing is-editing="cardCtrl.isEditing">
                             <div class="input-group">
                                 <input class="form-control"
                                        type="text" ng-model="cardCtrl.editingCard.description" placeholder="Введите текст">
@@ -41,7 +41,6 @@
                             <select class="form-control" ng-model="cardCtrl.editingCard.listId"
                                     ng-options="list.id as list.listName for list in listsCtrl.lists">
                             </select>
-                            {{cardCtrl.editingCard.listId}}
                         </form>
                     </div>
                 </div>
